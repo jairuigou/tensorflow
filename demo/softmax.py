@@ -1,3 +1,4 @@
+#coding = utf-8
 #softmax把输出的结果转换成概率，就是把输出的向量的每一个值n求e的n次方，得到的结果占所有向量的e的n次方的和的比重就算是这个向量值的概率
 import tensorflow as tf
 import numpy as np
