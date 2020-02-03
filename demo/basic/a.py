@@ -11,14 +11,9 @@ product = tf.matmul(m1,m2)
 #输出结果不是一个数字，而是一个tensor
 print(product)
 
-#定义一个会话，启动默认图
-sess = tf.Session()
-result = sess.run(product)
-print(result)
-#关闭会话
-sess.close()
-
-#不需要关闭会话
-with tf.Session() as sess:
-    result = sess.run(product)
+with tf.compat.v1.Session() as sess:
+    m1 = tf.constant([[3,3]])
+    m2 = tf.constant([[2],[3]])
+    c = tf.matmul(m1,m2)
+    result = sess.run(c)
     print(result)
